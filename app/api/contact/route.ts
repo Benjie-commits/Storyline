@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: "Storyline Pictures <noreply@storylinepictures.com>",
       to: process.env.CONTACT_EMAIL || "info@storylinepictures.com",
-      replyTo: email,
+      reply_to: email,
       subject: `Contact Form: ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -50,4 +50,5 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
 
